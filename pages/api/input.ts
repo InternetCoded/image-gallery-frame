@@ -160,7 +160,7 @@ return  res.status(200).send(`
         currentPage = 1;
         nextPage = 2;
       }
-	  let usedButtons;
+	  let usedButtons: string[] = [];
 	  if(buttonId == 2 || buttonId == 3 || buttonId == 4){
 		  usedButtons = getAltUsedButtons(+currentPage) ?? []
 	  }
