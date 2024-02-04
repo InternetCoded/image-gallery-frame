@@ -108,8 +108,8 @@ export default async function handler(
           <meta name="fc:frame:image" content="${imageUrl}">
           <meta name="fc:frame:post_url" content="${postUrl}" />
 			<meta name="fc:frame:button:1" content="->" />
-			<meta name="fc:frame:button:2" content="Up" />
-			<meta name="fc:frame:button:3" content="Down" />
+			<meta name="fc:frame:button:2" content="up" />
+			<meta name="fc:frame:button:3" content="down" />
 			<meta name="fc:frame:button:4" content="Clear" />
         </head>
         <body>
