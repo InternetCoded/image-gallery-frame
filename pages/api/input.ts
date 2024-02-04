@@ -1,3 +1,4 @@
+//ts-nocheck
 // import { Message, getSSLHubRpcClient } from "@farcaster/hub-nodejs";
 import { kv } from "@vercel/kv";
 import type { NextApiRequest, NextApiResponse } from "next";
@@ -164,7 +165,7 @@ return  res.status(200).send(`
 	  if(buttonId == 2 || buttonId == 3 || buttonId == 4){
 		  usedButtons = getAltUsedButtons(+currentPage) ?? []
 	  }
-	  else usedButtons = getUsedButtons(+currentPage)
+	  else usedButtons = getUsedButtons(+currentPage) ?? []
 
 			console.log(usedButtons)
 
