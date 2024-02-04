@@ -198,7 +198,7 @@ return  res.status(200).send(`
 
 
 
-				if (currentPage == 5) {
+				if (currentPage == 5 & nextPage == 6) {
 					buttonsTemplate =
 						`
 					<meta name="fc:frame:button:1" content="->">
