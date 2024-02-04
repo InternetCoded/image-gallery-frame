@@ -34,6 +34,7 @@ function getNextInput(page: number, buttonId: 2 | 3) {
 	return nextInput;
 }
 
+
 function getUsedButtons(page: number) {
 	let usedButtons;
 				switch (page) {
@@ -56,6 +57,28 @@ function getUsedButtons(page: number) {
 	}
 	return usedButtons
 			}
+function getAltUsedButtons(page: number) {
+	let usedButtons;
+				switch (page) {
+					case 2:
+						console.log("I am here")
+						usedButtons = [buttons[0], buttons[1]]
+						break
+					case 3:
+						console.log("I am here")
+						usedButtons = [buttons[2], buttons[3]]
+						break
+					case 4:
+						console.log("I am here")
+						usedButtons = [buttons[4], buttons[5]]
+						break
+					case 5:
+						console.log("I am here")
+						usedButtons = [buttons[6], buttons[7]]
+						break
+	}
+	return usedButtons
+			}
 
 export default async function handler(
   req: NextApiRequest,
@@ -69,6 +92,7 @@ export default async function handler(
 			let currentPage = req.query.page as unknown as number
 			console.log({currentPage})
 			let nextPage = +currentPage
+			
 
 
 			let input = req.query.input as unknown as string ?? ''
@@ -136,7 +160,11 @@ return  res.status(200).send(`
         currentPage = 1;
         nextPage = 2;
       }
-			const usedButtons = getUsedButtons(+currentPage) ?? []
+	  let usedButtons;
+	  if(buttonId == 2 || buttonId == 3 || buttonId == 4){
+		  usedButtons = getAltUsedButtons(+currentPage) ?? []
+	  }
+	  else usedButtons = getUsedButtons(+currentPage)
 
 			console.log(usedButtons)
 
