@@ -24,8 +24,8 @@ export async function generateMetadata(
     "fc:frame:post_url": `${postUrl}` ,
     "fc:frame:image": `${imageUrl}`,
     "fc:frame:button:1": "->",
-    "fc:frame:button:2": "Up",
-    "fc:frame:button:3": "Down",
+    "fc:frame:button:2": "up",
+    "fc:frame:button:3": "down",
     "fc:frame:button:4": "Clear",
   };
 
