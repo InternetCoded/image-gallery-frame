@@ -56,7 +56,7 @@ export default async function handler(
             padding: 20,
           }}
         >
-          <h1>Combination</h1>
+          <h1>Enter Combination</h1>
           {inputAsArray.length > 0 ? (
             <div style={{ display: "flex" }}>
               {inputAsArray.map((item) => {
