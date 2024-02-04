@@ -17,7 +17,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   // read route params
   const imageUrl = `${process.env['HOST']}/api/image?input=`
-  const postUrl = `${process.env["HOST"]}/api/input?page=2&input=""`
+  const postUrl = `${process.env["HOST"]}/api/input?page=2&input=`
 
   const fcMetadata: Record<string, string> = {
     "fc:frame": "vNext",

@@ -95,7 +95,7 @@ export default async function handler(
 
 			if(+currentPage == 7){
 	const imageUrl = `${process.env['HOST']}/api/image?input=`
-  	const postUrl = `${process.env["HOST"]}/api/input?page=2&input=""`
+  	const postUrl = `${process.env["HOST"]}/api/input?page=2&input=`
 
 				return  res.status(200).send(`
       			<!DOCTYPE html>
