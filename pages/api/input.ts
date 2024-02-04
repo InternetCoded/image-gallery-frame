@@ -92,6 +92,32 @@ export default async function handler(
 			console.log({buttonId})
 			let currentPage = req.query.page as unknown as number
 			console.log({currentPage})
+
+			if(+currentPage == 7){
+	const imageUrl = `${process.env['HOST']}/api/image?input=`
+  	const postUrl = `${process.env["HOST"]}/api/input?page=2&input=""`
+
+				return  res.status(200).send(`
+      			<!DOCTYPE html>
+      <html>
+        <head>
+          <title></title>
+          <meta property="og:title" content="Final Image">
+          <meta property="og:image" content="${imageUrl}">
+          <meta name="fc:frame" content="vNext">
+          <meta name="fc:frame:image" content="${imageUrl}">
+          <meta name="fc:frame:post_url" content="${postUrl}" />
+			<meta name="fc:frame:button:1" content="->" />
+			<meta name="fc:frame:button:2" content="Up" />
+			<meta name="fc:frame:button:3" content="Down" />
+			<meta name="fc:frame:button:4" content="Clear" />
+        </head>
+        <body>
+
+        </body>
+      </html>
+    `);
+			}
 			let nextPage = +currentPage
 			
 
@@ -135,7 +161,7 @@ export default async function handler(
 				else {
 					finalImageUrl = `${process.env['HOST']}/api/finalImage`
 				}
-				const postUrl = `${process.env["HOST"]}/api/input?page=2`;
+				const postUrl = `${process.env["HOST"]}/api/input?page=7`;
 
 				res.setHeader("Content-Type", "text/html");
 return  res.status(200).send(`
@@ -147,8 +173,8 @@ return  res.status(200).send(`
           <meta property="og:image" content="${finalImageUrl}">
           <meta name="fc:frame" content="vNext">
           <meta name="fc:frame:image" content="${finalImageUrl}">
-          <meta name="fc:frame:post_url" content="${postUrl}"
-					<meta name="fc:frame:button:1" content="Fetch Another" />
+          <meta name="fc:frame:post_url" content="${postUrl}" />
+			<meta name="fc:frame:button:1" content="Fetch Another" />
         </head>
         <body>
 
